@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jmx-exporter-aggregator-svc
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+    name: http
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: jmx-exporter-aggregator

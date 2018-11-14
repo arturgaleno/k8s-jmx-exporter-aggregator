@@ -83,7 +83,7 @@
                                     <port>1111</port>
                                 </ports>
                                 <workdir>/maven</workdir>
-                                <cmd>java -javaagent:jmx_prometheus_javaagent-0.3.1.jar=1111:jmx-exporter-config.yaml -jar ${project.build.finalName}.jar</cmd>
+                                <cmd>java -javaagent:jmx_prometheus_javaagent-0.3.1.jar=1111:jmx-exporter-config.yaml -Dk8s.master=https://kubernetes -jar ${project.build.finalName}.jar</cmd>
                             </build>
                         </image>
                     </images>

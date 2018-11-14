@@ -13,7 +13,7 @@ public class KubernetesClientConfig {
 
     @Bean
     public KubernetesClient k8sClient(@Value("${k8s.master:'http://localhost'}") String masterUrl,
-                                      @Value("${k8s.namespace:'default'}") String nameSpace) {
+                                      @Value("${k8s.namespace:default}") String nameSpace) {
 
         Config config = new ConfigBuilder()
                 .withMasterUrl(masterUrl)

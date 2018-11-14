@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jmx-exporter-aggregator
+  labels:
+    app: jmx-exporter-aggregator
+spec:
+  containers:
+  - name: jmx-exporter-aggregator
+    image: jmx-exporter-aggregator:1.0-SNAPSHOT
+    imagePullPolicy: IfNotPresent
+    ports:
+    - name: http
+      containerPort: 8080
+    - name: metrics
+      containerPort: 1111

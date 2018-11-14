@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-app
+spec:
+  ports:
+  - port: 80
+    name: http
+    protocol: TCP
+    targetPort: 8080
+  - port: 1111
+    name: metrics
+    protocol: TCP
+    targetPort: 1111
+  selector:
+    app: sample-app
