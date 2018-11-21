@@ -82,7 +82,7 @@ class MetricsWorker {
             String metricsReturn = bufferedReader.lines()
                     .map(l -> {
 
-                        if (l.startsWith("#")) return l;
+                        if (l.startsWith("#")) return l + "\n";
 
                         Matcher m = LABELED_PATTERN.matcher(l);
                         StringBuffer s = new StringBuffer();
